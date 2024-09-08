@@ -31,7 +31,7 @@ The proposed framework builds upon the **PatchCraft** architecture, introducing 
 │   ├── preprocessing/             # Folder that has the source code for pre-processing the images
 │   │   ├── filters.py 
 │   │   ├── patch_generator.py 
-│   └── utils.py
+│   └── TrueFacesapp/              # Folder containing the Flask application
 ├── results/                       # Folder containing results (confusion matrix, metrics, etc.)
 ├── Report/                        # Folder containing the report of my approach and the paper of the inspired technique technique
 ├── requirements.txt               # Required packages for the project
@@ -45,7 +45,7 @@ The dataset includes real and AI-generated human faces. The real images are sour
 
 - **FFHQ Dataset**: [Link](https://www.kaggle.com/datasets/deepakg/ffhq-face-data)
 - **AI-generated faces**: Collected from [thispersondoesnotexist.com](https://thispersondoesnotexist.com).
-- **Dataset Link** :[Dataset Link](https://drive.google.com/drive/folders/16m1mFsO5XCPfE58i7u3mQjTLjO9fTpvi?usp=sharing)
+- **Dataset Link** : [Dataset Link](https://drive.google.com/drive/folders/16m1mFsO5XCPfE58i7u3mQjTLjO9fTpvi?usp=sharing)
 ## Model Training
 
 To train the model on the provided dataset:
@@ -69,6 +69,10 @@ The model achieved the following results:
 - **F1-Score (AI-generated)**: 81%
 
 The results demonstrate strong performance in detecting AI-generated images, particularly those created with StyleGAN2. For more detailed results, including accuracy and loss curves, and visualizations such as the confusion matrix, check the `results/` folder.
+
+## Deployment
+
+This section provides details on how to deploy the AI face detection model as part of the TrueFaces web application. The application allows users to upload images and get real-time predictions on whether the face is AI-generated or real. The architecture leverages Flask as the backend, which connects the AI model to the frontend interface.
 
 ## Limitations
 

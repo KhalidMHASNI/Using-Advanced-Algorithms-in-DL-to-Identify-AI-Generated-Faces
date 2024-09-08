@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+			<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>TrueFaces - TFC, WebApp that recognize ai-generated faces</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='./assets/img/favicon.svg')  }}"/>
+	
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./assets/css/bootstrap-5.0.0-alpha-2.min.css')  }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='./assets/css/LineIcons.2.0.css')  }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='./assets/css/animate.css')  }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='./assets/css/main.css')  }}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="ytp-spinner">
+          <div class="ytp-spinner-container">
+            <div class="ytp-spinner-rotator">
+              <div class="ytp-spinner-left">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+              <div class="ytp-spinner-right">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="/">
+                  <img src="{{ url_for('static', filename='./assets/img/logo/logo.svg')  }}" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <ul id="nav" class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#upload"><b>Detect</b></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- navbar collapse -->
+              </nav>
+              <!-- navbar -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section">
+		<div class="container">
+		  <div class="row justify-content-center">
+			<div class="col-lg-8 col-xl-7">
+			  <div class="hero-content">
+				<h1 class="wow fadeInUp" data-wow-delay=".2s">Welcome to <br> TrueFaces</h1>
+				<p class="wow fadeInUp" data-wow-delay=".4s">
+				  Uncover the Truth Behind Every Face <br>
+				  TrueFaces leverages state-of-the-art deep learning technology to determine whether a face is real or AI-generated. Whether you're identifying deepfakes or AI-created avatars, TrueFaces provides a seamless and accurate detection service. Simply upload an image, and our AI will deliver an instant, reliable analysis.
+				</p>
+				 <a href="#upload" rel="nofollow" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Detect Now</a>
+			  </div>
+			</div>
+			<div class="col-lg-12">
+			  <div class="hero-img wow fadeInUp" data-wow-delay=".5s">
+				<img src="{{ url_for('static', filename='assets/img/hero/hero-img.svg') }}" alt="TrueFaces Detection Hero Image">
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	  
+  
+		<!-- ========================= hero-section end ========================= -->
+
+
+		<!-- ========================= service-section start ========================= -->
+		<section id="features" class="service-section pt-150">
+			<div class="container">
+			  <div class="row align-items-center">
+				<div class="col-xl-6 col-lg-9">
+				  <div class="service-content">
+					<div class="section-title">
+					  <h1 class="mb-30 wow fadeInUp" data-wow-delay=".2s">Why Choose TrueFaces?</h1>
+					  <p class="mb-40 wow fadeInUp" data-wow-delay=".4s">
+						TrueFaces provides top-tier AI-driven face analysis technology. With fast, reliable, and secure results, our advanced deep learning models analyze the most intricate details—such as textures and facial patterns—to distinguish between real and AI-generated faces.
+					  </p>
+					  <a href="#upload" class="main-btn btn-hover border-btn wow fadeInUp" data-wow-delay=".6s">Get Started</a>
+					</div>
+				  </div>
+				</div>
+		  
+				<div class="col-lg-12 col-xl-6">
+				  <div class="row">
+					<div class="col-xl-6 col-md-6">
+					  <div class="single-service">
+						<div class="icon">
+						  <i class="fas fa-tachometer-alt"></i>
+						</div>
+						<div class="content">
+						  <h3>Blazing Fast</h3>
+						  <p>Get accurate results in real-time with our highly optimized AI model.</p>
+						</div>
+					  </div>
+					</div>
+					<div class="col-xl-6 col-md-6">
+					  <div class="single-service">
+						<div class="icon">
+						  <i class="fas fa-check-circle"></i>
+						</div>
+						<div class="content">
+						  <h3>Accurate Detection</h3>
+						  <p>Analyze and detect AI-generated faces with precision using our advanced algorithms.</p>
+						</div>
+					  </div>
+					</div>
+					<div class="col-xl-6 col-md-6">
+					  <div class="single-service">
+						<div class="icon">
+						  <i class="fas fa-handshake"></i>
+						</div>
+						<div class="content">
+						  <h3>User-Friendly Interface</h3>
+						  <p>Effortlessly upload your photos and receive detailed results with our simple design.</p>
+						</div>
+					  </div>
+					</div>
+					<div class="col-xl-6 col-md-6">
+					  <div class="single-service">
+						<div class="icon">
+						  <i class="fas fa-shield-alt"></i>
+						</div>
+						<div class="content">
+						  <h3>Secure & Private</h3>
+						  <p>Your data is handled securely, and we ensure complete privacy for your images.</p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </section>
+		  
+		<!-- ========================= service-section end ========================= -->
+
+		<!-- ========================= about-section start ========================= -->
+		<section id="about" class="about-section pt-150">
+			<div class="container">
+			  <div class="row">
+				<div class="col-lg-6">
+				  <div class="about-img wow fadeInUp" data-wow-delay=".5s">
+					<img src="{{ url_for('static', filename='./assets/img/about/about-img.svg') }}" alt="TrueFaces Model Performance">
+				  </div>
+				</div>
+				<div class="col-lg-6">
+				  <div class="about-content">
+					<div class="section-title">
+					  <h1 class="wow fadeInUp" data-wow-delay=".2s">Model Accuracy and Performance</h1>
+					  <p class="wow fadeInUp" data-wow-delay=".4s">
+						At TrueFaces, accuracy is our highest priority. Our AI model has undergone extensive training on diverse datasets to provide top-tier results in detecting AI-generated faces. Here are some key metrics that showcase how our model performs.
+					  </p>
+					</div>
+		  
+					<div class="counter-up wow fadeInUp" data-wow-delay=".8s">
+						<div class="row">
+						  <div class="col-lg-2 col-md-4 col-sm-6" id="aboutH5">
+							<div class="single-counter" > <!-- Added margin-bottom -->
+							  <h3 id="secondo1" class="countup" cup-end="98.7" cup-append="%">92.7</h3>
+							  <h5>Model Accuracy</h5>
+							</div>
+						  </div>
+						  <div class="col-lg-2 col-md-4 col-sm-6" id="aboutH5">
+							<div class="single-counter"> <!-- Added margin-bottom -->
+							  <h3 id="secondo2" class="countup" cup-end="96.2" cup-append="%">96.2</h3>
+							  <h5>Precision</h5>
+							</div>
+						  </div>
+						  <div class="col-lg-2 col-md-4 col-sm-6" id="aboutH5">
+							<div class="single-counter"> <!-- Added margin-bottom -->
+							  <h3 id="secondo3" class="countup" cup-end="97.5" cup-append="%">97.5</h3>
+							  <h5>Recall</h5>
+							</div>
+						  </div>
+						  <div class="col-lg-2 col-md-4 col-sm-6" id="aboutH5">
+							<div class="single-counter"> <!-- Added margin-bottom -->
+							  <h3 id="secondo4" class="countup" cup-end="95.9" cup-append="%">95.9</h3>
+							  <h5>F1-Score</h5>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </section>
+		  
+		  
+		<!-- ========================= about-section end ========================= -->
+
+		
+		<!-- ========================= testimonial-section start ========================= -->
+		<!-- <section class="testimonial-section img-bg mt-130 pt-60 pb-60">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-12">
+            <div class="hero-content">
+              <h1 class="wow fadeInUp" data-wow-delay=".2s">You are using free lite version</h1>
+              <p class="wow fadeInUp" data-wow-delay=".4s">
+                Please purchase full version of the template to get all sections, features and permission to remove footer credits.
+              </p></br>
+              <a href="https://rebrand.ly/saasland-gg/" rel="nofollow" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Purchase Now</a>
+            </div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+    <!-- ========================= testimonial-section end ========================= -->
+
+    <!-- ========================= pricing-section start ========================= -->
+    <section id="upload" class="upload-section pt-130">
+		<div class="container">
+		  <div class="row justify-content-center">
+			<div class="col-lg-6 col-xl-5">
+			  <div class="section-title text-center mb-60">
+				<h1 class="mb-25 wow fadeInUp" data-wow-delay=".2s">AI Face Detection</h1>
+				<p class="wow fadeInUp" data-wow-delay=".4s">
+				  Upload an image of a face to analyze whether it's real or AI-generated. Our advanced AI model will provide an instant prediction with a confidence score.
+				</p>
+			  </div>
+			</div>
+		  </div>
+	  
+		  <!-- Upload Section (left) and Result Section (right) -->
+		  <div class="row">
+			<!-- Upload Section (left) -->
+			<div class="col-lg-6 col-xl-6">
+			  <h1>Upload an image for AI analysis.</h1>
+			  <br>
+			  <form action="/" method="POST" enctype="multipart/form-data">
+				<div class="upload-container">
+				  <div class="border-container" id="drop-area">
+					<div class="icons fa-4x">
+					  <i class="fas fa-file-image" data-fa-transform="shrink-3 down-2 left-6 rotate--45"></i>
+					</div>
+					<input type="file" id="file-upload" name="imagefile" accept="image/*" style="display: none;">
+					<p>Drag and drop your face image here, or <a id="file-browser">browse</a> your computer.</p>
+					<!-- Move the file name directly below the first paragraph -->
+					<p id="file-name">
+						{% if filename %}
+						  {{ filename }}
+						{% else %}
+						  No file selected.
+						{% endif %}
+					  </p>
+					  
+				  </div>
+				  <br>
+				  <button class="main-btn btn-hover" type="submit">Analyze Image</button>
+				</div>
+			  </form>			  
+			</div>
+	  
+			<!-- Result Section (right) -->
+			<div class="col-lg-6 col-xl-6" id="result-section">
+			  <h1>Prediction Result</h1>
+			  <div id="imagePreview" class="mt-4">
+				{% if filename %}
+				  <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Face Image" class="img-fluid" />
+				{% endif %}
+			  </div>
+			  <div id="predictionResult" class="mt-4">
+				{% if prediction %}
+				  <p>Prediction: <strong>{{ prediction }}</strong></p>
+				  <p>Confidence: <strong>{{ confidence }}%</strong></p>
+				{% endif %}
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	  
+	  
+	  
+		<!-- ========================= pricing-section end ========================= -->
+
+		<!-- ========================= contact-section start ========================= -->
+		<section id="contact" class="contact-section pt-130">
+			<div class="container">
+			  <div class="row justify-content-center">
+				<div class="col-lg-6 col-xl-5">
+				  <div class="section-title text-center mb-60">
+					<h1 class="mb-25 wow fadeInUp" data-wow-delay=".2s">Contact Us</h1>
+					<p class="wow fadeInUp" data-wow-delay=".4s">Have any questions or need assistance? Get in touch with us through the form below, and we’ll get back to you as soon as possible.</p>
+				  </div>
+				</div>
+			  </div>
+		  
+			  <div class="row">
+				<div class="col-lg-7">
+				  <div class="contact-wrapper wow fadeInUp" data-wow-delay=".2s">
+					<form  id="contact-form" class="contact-form">
+						<div class="row">
+						  <div class="col-md-6">
+							<div class="single-form">
+							  <input type="text" name="name" id="name" class="form-input" placeholder="Your Name">
+							</div>
+						  </div>
+						  <div class="col-md-6">
+							<div class="single-form">
+							  <input type="email" name="email" id="email" class="form-input" placeholder="Your E-mail">
+							</div>
+						  </div>
+						  <div class="col-md-6">
+							<div class="single-form">
+							  <input type="text" name="subject" id="subject" class="form-input" placeholder="Subject">
+							</div>
+						  </div>
+						  <div class="col-md-6">
+							<div class="single-form">
+							  <input type="text" name="number" id="number" class="form-input" placeholder="Number">
+							</div>
+						  </div>
+						  <div class="col-md-12">
+							<div class="single-form">
+							  <textarea name="message" id="message" class="form-input" rows="7" placeholder="Message"></textarea>
+							</div>
+						  </div>
+						  <div class="col-md-12">
+							<div class="submit-btn">
+							  <button class="main-btn btn-hover" type="submit" href="#contact">Submit Message</button>
+							</div>
+						  </div>
+						</div>
+					  </form>
+					  
+				  </div>
+				</div>
+				<div class="col-lg-5">
+				  <div class="contact-img wow fadeInUp" data-wow-delay=".5s">
+					<img src="{{ url_for('static', filename='./assets/img/contact/contact-img.svg') }}" alt="">
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </section>
+		  
+		<!-- ========================= contact-section end ========================= -->
+
+    <!-- ========================= footer start ========================= -->
+	<footer class="footer mt-150 pt-90">
+		<div class="container">
+		  <div class="widget-wrapper">
+			<div class="row">
+			  <!-- Logo and Socials Section -->
+			  <div class="col-lg-3 col-sm-6">
+				<div class="footer-widget">
+				  <div class="logo">
+					<a href="index.html"> 
+					  <img src="{{ url_for('static', filename='./assets/img/logo/logo.svg') }}" alt="TrueFaces Logo"> 
+					</a>
+				  </div>
+				  <ul class="socials">
+					<li>
+					  <a href="https://www.facebook.com/truefaces" target="_blank" aria-label="Facebook"> 
+						<i class="lni lni-facebook-filled"></i> 
+					  </a>
+					</li>
+					<li>
+					  <a href="https://www.twitter.com/truefaces" target="_blank" aria-label="Twitter"> 
+						<i class="lni lni-twitter-filled"></i> 
+					  </a>
+					</li>
+					<li>
+					  <a href="https://www.instagram.com/truefaces" target="_blank" aria-label="Instagram"> 
+						<i class="lni lni-instagram-filled"></i> 
+					  </a>
+					</li>
+					<li>
+					  <a href="https://www.linkedin.com/company/truefaces" target="_blank" aria-label="LinkedIn"> 
+						<i class="lni lni-linkedin-original"></i> 
+					  </a>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+	  
+			  <!-- Company Section -->
+			  <div class="col-lg-3 col-sm-6">
+				<div class="footer-widget">
+				  <h3 class="text-white">Informations</h3>
+				  <ul class="links">
+					<li>
+					  <a href="#features">About Us</a>
+					</li>
+					<li>
+					  <a href="#about">Model Performance</a>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+	  
+			  <!-- Resources Section -->
+			  <div class="col-lg-3 col-sm-6">
+				<div class="footer-widget">
+				  <h3 class="text-white">Services</h3>
+				  <ul class="links">
+					<li>
+					  <a href="#upload">Model Detection</a>
+					</li>
+					<li>
+					  <a href="#contact">Contact Us</a>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+	  
+			  <!-- Features Section -->
+			  <div class="col-lg-3 col-sm-6">
+				<div class="footer-widget">
+				  <h3 class="text-white">Map</h3>
+				  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.865947243399!2d-5.546620523065809!3d33.867345473227296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda04541bd14ccf7%3A0xa342e2dd2b480171!2sFaculty%20of%20Sciences%20-%20Moulay%20Ismail%20University!5e0!3m2!1sfr!2sma!4v1725573201346!5m2!1sfr!2sma" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			  </div>
+			</div>
+			
+			<!-- Footer Credit -->
+			<div class="row">
+			  <div class="col-12">
+				<p class="text-center pb-30" style="color: #fff">
+				  © 2024 TrueFaces. All Rights Reserved. Designed and Developed by 
+				  <a href="https://graygrids.com" rel="nofollow" style="color: #fff">MHASNI Khalid</a>
+				</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+	  
+	
+	  
+    <!-- ========================= footer end ========================= -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+	
+	  <script>// Only trigger the file input when "browse" is clicked
+		document.getElementById('drop-area').addEventListener('click', function () {
+		document.getElementById('file-upload').click();
+	  });
+
+		// Display selected file name (for file input browsing)
+		document.getElementById('file-upload').addEventListener('change', function () {
+			const file = this.files[0];
+			if (file) {
+				document.getElementById('file-name').textContent = file.name; // Display the file name
+			}
+		});
+
+		// Drag and Drop functionality for the drop area
+		const dropArea = document.getElementById('drop-area');
+
+		// Prevent default behavior (Prevent file from being opened)
+		['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+			dropArea.addEventListener(eventName, preventDefaults, false);
+		});
+
+		function preventDefaults(e) {
+			e.preventDefault();
+			e.stopPropagation();
+		}
+
+		// Highlight the drop area when file is dragged over
+		['dragenter', 'dragover'].forEach(eventName => {
+			dropArea.addEventListener(eventName, () => {
+				dropArea.classList.add('highlight');
+			}, false);
+		});
+
+		['dragleave', 'drop'].forEach(eventName => {
+			dropArea.addEventListener(eventName, () => {
+				dropArea.classList.remove('highlight');
+			}, false);
+		});
+
+		// Handle dropped files
+		dropArea.addEventListener('drop', handleDrop, false);
+
+		function handleDrop(e) {
+			const dt = e.dataTransfer;
+			const files = dt.files;
+			handleFiles(files);
+		}
+
+		function handleFiles(files) {
+			const file = files[0]; // Only handle one file in this example
+			if (file) {
+				document.getElementById('file-name').textContent = file.name; // Display the file name
+				document.getElementById('file-upload').files = files; // Assign dropped file to the input element
+			}
+		}
+	
+		</script>
+    <script src="{{ url_for('static', filename='./assets/js/bootstrap.5.0.0.alpha-2-min.js')  }}"></script>
+    <script src="{{ url_for('static', filename='./assets/js/count-up.min.js')  }}"></script>
+    <script src="{{ url_for('static', filename='./assets/js/wow.min.js')  }}"></script>
+    <script src="{{ url_for('static', filename='./assets/js/main.js')  }}"></script>
+  </body>
+</html>
