@@ -20,18 +20,23 @@ The proposed framework builds upon the **PatchCraft** architecture, introducing 
 ## Project Structure
 
 ```bash
-├── dataset/               # Folder containing sample real and AI-generated images
-├── models/                # Pre-trained models and checkpoints
-├── src/                   # Source code for model architecture, training, and evaluation
-│   ├── data_preprocessing.py
-│   ├── model.py
-│   ├── train.py
-│   ├── evaluate.py
+├── dataset/                       # Folder containing sample real and AI-generated images
+│   ├── fake/                      # Folder that has some AI-generated Faces
+│   ├── real/                      # Folder that has some Real Faces
+│   ├── data_drive_link.txt        # Drive Dataset Link
+├── models/                        # Final model 
+├── src/                           # Source code for model architecture, training, and evaluation
+│   ├── generating_AI_Faces_code/  # Folder that has the source code for generating AI-generated faces images
+│   │   ├── data_drive_link.txt    # Source Code that generates AI-generated faces
+│   ├── preprocessing/             # Folder that has the source code for pre-processing the images
+│   │   ├── filters.py 
+│   │   ├── patch_generator.py 
 │   └── utils.py
-├── results/               # Folder containing results (confusion matrix, metrics, etc.)
-├── requirements.txt       # Required packages for the project
-├── README.md              # Project documentation
-└── LICENSE                # License for the project
+├── results/                       # Folder containing results (confusion matrix, metrics, etc.)
+├── Report/                        # Folder containing the report of my approach and the paper of the inspired technique technique
+├── requirements.txt               # Required packages for the project
+├── README.md                      # Project documentation
+└── LICENSE                        # License for the project
 ```
 
 ## Dataset
@@ -40,7 +45,7 @@ The dataset includes real and AI-generated human faces. The real images are sour
 
 - **FFHQ Dataset**: [Link](https://www.kaggle.com/datasets/deepakg/ffhq-face-data)
 - **AI-generated faces**: Collected from [thispersondoesnotexist.com](https://thispersondoesnotexist.com).
-
+- **Dataset Link** :[Dataset Link](https://drive.google.com/drive/folders/16m1mFsO5XCPfE58i7u3mQjTLjO9fTpvi?usp=sharing)
 ## Model Training
 
 To train the model on the provided dataset:
