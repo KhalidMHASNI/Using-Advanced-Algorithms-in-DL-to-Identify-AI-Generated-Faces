@@ -72,7 +72,54 @@ The results demonstrate strong performance in detecting AI-generated images, par
 
 ## Deployment
 
-This section provides details on how to deploy the AI face detection model as part of the TrueFaces web application. The application allows users to upload images and get real-time predictions on whether the face is AI-generated or real. The architecture leverages Flask as the backend, which connects the AI model to the frontend interface.
+This section provides details on how to deploy the AI face detection model as part of the **TrueFaces** web application. The application allows users to upload images and get real-time predictions on whether the face is AI-generated or real. The architecture leverages Flask as the backend, which connects the AI model to the frontend interface.
+
+### System Architecture
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9256d433-5f88-4535-93da-cb5b04d73daa" alt="System Architecture Diagram">
+</p>
+<br>
+<i><p align="center">System Architecture Diagram</p></i>
+
+The system architecture of TrueFaces consists of the following components:
+
+1. **Frontend Interface**: Allows users to upload images for detection through a user-friendly drag-and-drop interface.
+2. **Flask Backend**: Handles the processing of the uploaded images, invoking the AI model to generate predictions.
+3. **AI Model**: Pre-trained model deployed within the backend to analyze images and determine if they are real or AI-generated.
+
+---
+
+### TrueFaces Web Interface
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d5dc4dee-fe11-4bc0-a717-f93c11e1d31c" alt="TrueFaces Web Interface">
+</p>
+<br>
+
+The TrueFaces interface provides a simple and intuitive platform for users:
+
+- **(a) Welcome Section**: An introduction and explanation of the tool.
+- **(b) Features Section**: Highlights the unique benefits of using TrueFaces.
+- **(c) Image Upload & Result Display**: Users upload their images and receive a confidence-based result on whether the image is AI-generated or real.
+- **(d) Footer**: Contains a contact form for inquiries and additional website details.
+
+---
+
+### Backend Integration
+
+The backend is powered by Flask, which processes the uploaded images and connects with the AI model. Once the image is analyzed, Flask returns the prediction result to the frontend in real time.
+
+
+To deploy the backend:
+1. Install Flask and other dependencies:
+   ```bash
+   pip install Flask tensorflow
+   ```
+2.Run the Flask server:
+  ```bash
+  python src/app.py
+  ```
 
 ## Limitations
 
