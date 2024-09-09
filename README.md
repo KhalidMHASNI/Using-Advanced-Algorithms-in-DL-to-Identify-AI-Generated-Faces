@@ -8,6 +8,7 @@ This repository contains the code, dataset, and resources for the project **"Rec
 - [Dataset](#dataset)
 - [Model Training](#model-training)
 - [Evaluations and Results](#results)
+- [Deployment](#deployment)
 - [Limitations](#limitations)
 - [Future Work](#future-work)
 
