@@ -32,7 +32,9 @@ The proposed framework builds upon the **PatchCraft** architecture, introducing 
 │   ├── preprocessing/             # Folder that has the source code for pre-processing the images
 │   │   ├── filters.py 
 │   │   ├── patch_generator.py 
-│   └── TrueFacesapp/              # Folder containing the Flask application
+│   ├── TrueFacesapp/              # Folder containing the Flask application
+│   ├── preprocessing_demo.ipynb
+│   └── train_code.ipynb
 ├── results/                       # Folder containing results (confusion matrix, metrics, etc.)
 ├── Report/                        # Folder containing the report of my approach and the paper of the inspired technique technique
 ├── requirements.txt               # Required packages for the project
